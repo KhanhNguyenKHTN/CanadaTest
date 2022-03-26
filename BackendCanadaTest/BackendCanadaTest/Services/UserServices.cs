@@ -75,7 +75,7 @@ namespace BackendCanadaTest.Services
         /// <returns></returns>
         public bool GenarateAuthenCode(UserInfor x_objUser)
         {
-            if (x_objUser != null && string.IsNullOrEmpty(x_objUser.Authen) == true)
+            if (x_objUser != null && (string.IsNullOrEmpty(x_objUser.Authen) == true || x_objUser.IsSetUpCode == false))
             {
                 x_objUser.Authen = Guid.NewGuid().ToString().Replace("-", "").Substring(0, 10);
                 return true;

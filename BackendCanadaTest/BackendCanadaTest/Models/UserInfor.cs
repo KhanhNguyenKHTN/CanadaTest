@@ -11,6 +11,7 @@ namespace BackendCanadaTest.Models
         public string PassWord { get; set; }
         public string Authen { get; set; }
         public string Token { get; set; }
+        public bool IsSetUpCode { get; set; }
         public List<string> Roles { get; set; }
     }
 }

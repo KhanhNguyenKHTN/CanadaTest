@@ -71,6 +71,7 @@ namespace BackendCanadaTest.Controllers
                 if (bCheck == true)
                 {
                     objUser.Token = m_objLoginServices.GenerateToken(objUser, m_objJWTConfig);
+                    objUser.IsSetUpCode = true;
                     Response.WriteAsync(JsonConvert.SerializeObject(new
                     {
                         UserName = objUser.UserName,
