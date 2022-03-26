@@ -1,0 +1,90 @@
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <form (keydown.enter)="login()">
+                <div class="divider d-flex align-items-center my-4">
+                    <p class="text-center fw-bold mx-3 mb-0">LOGIN</p>
+                </div>
+                <div class="d-flex justify-content-center mb-2">
+                    <label class="text-danger align-items-center text-center">{{errorMessage}}</label>
+                </div>
+                <!-- User input -->
+                <div class="form-outline mb-4">
+                    <input type="input" id="form3Example3" class="form-control form-control-lg"
+                        placeholder="Enter your username" [(ngModel)]="userInfor.username"
+                        [ngModelOptions]="{standalone: true}" />
+                    <div class="d-flex justify-content-between">
+                        <label class="form-label" for="form3Example3">Username</label>
+                        <label class="text-danger">{{userInfor.errUsername}}</label>
+                    </div>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-3">
+                    <input type="password" id="form3Example4" class="form-control form-control-lg"
+                        placeholder="Enter password" [(ngModel)]="userInfor.password"
+                        [ngModelOptions]="{standalone: true}" />
+                    <div class="d-flex justify-content-between">
+                        <label class="form-label" for="form3Example3">Password</label>
+                        <label class="text-danger">{{userInfor.errPassword}}</label>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <!-- Checkbox -->
+                    <div class="form-check mb-0">
+                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                        <label class="form-check-label" for="form2Example3">
+                            Remember me
+                        </label>
+                    </div>
+                    <a href="#!" class="text-body">Forgot password?</a>
+                </div>
+
+                <div class="text-center text-lg-start mt-4 pt-2">
+                    <button type="button" class="btn btn-primary btn-lg"
+                        style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="login()">Login</button>
+                    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                            class="link-danger">Register</a></p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="twoFaPage" class="on-top hidden">
+    <section class="vh-100" style="background-color: #508bfc;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+                            <h3 class="mb-5">Google Authenticator</h3>
+                            <figure id="setupGoogleAuth" class="figure">
+                                <h5>Set up Google Authenticator for the first time</h5>
+                                <img src="{{imageData}}" class="img-thumbnail">
+                                <figcaption class="figure-caption">Scan to set up a Google Authenticator</figcaption>
+                                <figcaption class="figure-caption">Or Enter this key: {{ggKey}}</figcaption>
+                            </figure>
+
+
+                            <div class="form-outline mb-4">
+                                <input type="text" id="typeCodeX-2" class="form-control form-control-lg"
+                                    placeholder="Enter your code" [(ngModel)]="code" (keydown.enter)="verifyCode()"
+                                    [ngModelOptions]="{standalone: true}" />
+                                <label class="text-danger align-items-center text-center mt-2">{{errorMessage}}</label>
+                            </div>
+                            <button class="btn btn-primary btn-lg btn-block" type="submit"
+                                (click)="verifyCode()">Verify</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
