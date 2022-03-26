@@ -15,7 +15,6 @@ namespace BackendCanadaTest.Controllers
         [HttpGet]
         public string Get()
         {
-            System.Threading.Thread.Sleep(1000);
             Response.StatusCode = StatusCodes.Status200OK;
             Response.ContentType = "text/plain";
             return "hello";
