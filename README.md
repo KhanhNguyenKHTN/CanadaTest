@@ -1,11 +1,11 @@
 ### Prerequisites
 * npm
   ```sh
-  npm install npm@latest -g
+  npm install -g npm@latest
   ```
 * Angular 13
   ```sh
-  npm install @angular/cli -g
+  npm install -g @angular/cli
   ```
 * Visual studio 2019
 
