@@ -1,0 +1,9 @@
+.on-top {
+    position: absolute;
+    width: 100vw;
+    top: 0;
+}
+
+.hidden {
+    display: none;
+}

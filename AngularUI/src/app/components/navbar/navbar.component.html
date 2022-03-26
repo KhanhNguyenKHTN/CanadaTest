@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="nav.visible">
+    <div class="container-fluid">
+        <a class="navbar-brand text-info">Canada Test</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active': nav.page === 'home'}" aria-current="page" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active': nav.page === 'hello'}" href="/hello">Hello</a>
+                </li>
+            </ul>
+        </div>
+        <form class="d-flex">
+            <button class="btn btn-outline-danger" type="submit" (click)="logOut()">Log Out</button>
+        </form>
+    </div>
+</nav>
